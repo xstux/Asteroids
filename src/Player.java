@@ -85,7 +85,7 @@ public class Player
 		}
 		else if (reverse)
 		{
-			speed = -0.15;
+			speed = -0.075;
 		}
 		else
 		{
