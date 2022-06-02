@@ -18,9 +18,7 @@ public class GamePanel extends JPanel implements Runnable
 	public static int HEIGHT = 480;
 	public static int NUM_OBJ = 16;
 
-	
 	public GameObject[] gObj = new GameObject[NUM_OBJ];
-
 	
 	public Vector<GameObject> gObjV = new Vector<>();
 	public Vector<GameObject> gObjQ = new Vector<>();
@@ -28,8 +26,7 @@ public class GamePanel extends JPanel implements Runnable
 	public Vector<Particle> particles = new Vector<>();
 	
 	public Player player = new Player(); 
-	
-	
+		
 	private Thread thread;
 	private boolean running;
 	public boolean aFlag;
@@ -122,6 +119,10 @@ public class GamePanel extends JPanel implements Runnable
 					case KeyEvent.VK_UP:
 						player.thrust = true;
 						break;
+
+					case KeyEvent.VK_DOWN:
+						player.reverse = true;
+						break;
 					
 					case KeyEvent.VK_ESCAPE:
 						running = false;
@@ -158,6 +159,10 @@ public class GamePanel extends JPanel implements Runnable
 						
 					case KeyEvent.VK_UP:
 						player.thrust = false;
+						break;
+
+					case KeyEvent.VK_DOWN:
+						player.reverse = false;
 						break;
 					
 					case KeyEvent.VK_Z:

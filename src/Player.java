@@ -16,6 +16,7 @@ public class Player
 	public boolean rotateLeft;
 	public boolean rotateRight;
 	public boolean thrust;
+	public boolean reverse;
 	public boolean fire;
 	public int reloadTimer;
 	
@@ -82,10 +83,15 @@ public class Player
 		{
 			speed = 0.15;
 		}
+		else if (reverse)
+		{
+			speed = -0.15;
+		}
 		else
 		{
 			speed = 0;
 		}
+
 		//if (speed >= 4.0)
 		//	speed = 4.0;
 		
