@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
 import java.util.Vector;
 import java.util.Iterator;
 
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 public class GamePanel extends JPanel implements Runnable
 {
 	public static int WIDTH = 640;
@@ -173,7 +173,7 @@ public class GamePanel extends JPanel implements Runnable
 	
 	void testKeyPress(int k)
 	{
-		System.out.println("key: " + k);
+		//System.out.println("key: " + k);
 		if (k == 27)
 		{
 			running = false;
@@ -190,7 +190,7 @@ public class GamePanel extends JPanel implements Runnable
 			player.rotateLeft = false;
 	}
 	
-	private void testPress(int x, int y, int b)
+	/*private void testPress(int x, int y, int b)
 	{
 		System.out.println("x:" + x + " y:" + y + " b:" + b);
 		
@@ -202,13 +202,13 @@ public class GamePanel extends JPanel implements Runnable
 			break;
 		}
 
-	}
+	}*/
 
-	private void testMove(int x, int y)
+	/*private void testMove(int x, int y)
 	{
 		//System.out.println("x:" + x + " y:" + y);
 		player.getMousePosition(x, y);
-	}
+	}*/
 
 	
 	// Functions
@@ -408,20 +408,20 @@ public class GamePanel extends JPanel implements Runnable
 		
 		if (player.thrust)
 		{
-			for (int z = 0; z < 2; z++)
+			/*for (int z = 0; z < 2; z++)
 			{
 				Particle particle = new Particle(player.x + (int)(Math.sin((player.angle - 180) / 180.0 * 3.14) * 6), player.y - (int)(Math.cos((player.angle - 180) / 180.0 * 3.14) * 6), player.angle - 180.0);
 				particle.vx += player.vx;
 				particle.vy += player.vy;
 				particles.add(particle);
-			}
+			}*/
 		}
 		
 		player.update();
 
-		Iterator<Bullet> ib = player.bullets.iterator();
+		//Iterator<Bullet> ib = player.bullets.iterator();
 		
-		while (ib.hasNext())
+		/*while (ib.hasNext())
 		{
 			Bullet bullet = ib.next();
 			
@@ -434,7 +434,7 @@ public class GamePanel extends JPanel implements Runnable
 				//p1.vy += bullet.vy;
 				particles.add(p1);
 			}
-		}
+		}*/
 		
 		
 		Iterator<Explosion> ie = explosions.iterator();
@@ -469,7 +469,7 @@ public class GamePanel extends JPanel implements Runnable
 		
 		
 		//Make 1 polygon
-		Polygon p = generatePolygon(12.0, 6);
+		//Polygon p = generatePolygon(12.0, 6);
 		
 		/*for (int x = 0; x < NUM_OBJ; x++)
 		{
@@ -554,7 +554,7 @@ public class GamePanel extends JPanel implements Runnable
 			g.setTransform(identity);
 			g.translate(bullet.x, bullet.y);
 			g.rotate(bullet.angle * 3.14 / 180.0);
-			System.out.println(bullet.angle);
+			//System.out.println(bullet.angle);
 			bullet.draw(g);
 		};
 		

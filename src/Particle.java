@@ -9,6 +9,7 @@ public class Particle {
 	public double angle;
 	public int life;
 	public double rotation;
+	
 
 	public Particle(double x, double y, double angle)
 	{

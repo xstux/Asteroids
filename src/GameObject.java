@@ -60,7 +60,7 @@ public class GameObject
 		//y1 = (int)(y + Math.cos(angle * 3.14 / 180.0) * (double)l);
 	}
 	
-	@SuppressWarnings("unused")
+	//@SuppressWarnings("unused")
 	private void brake()
 	{
 		//x2 = x2 > 3 ? 3 : x2;
@@ -87,12 +87,12 @@ public class GameObject
 		//Create an array to store the coordinates.
 		int[] x = new int[pts];
 		int[] y = new int[pts];
-		double r;
+		//double r;
 		
 		//Generate the points in the polygon.
 		double angle = (2 * Math.PI / pts);
 		for(int i = 0; i < pts; i++) {
-			r = 1.0;
+			//r = 1.0;
 			x[i] = (int) (radius * Math.sin(i * angle));
 			y[i] = (int) (radius * Math.cos(i * angle));
 		}

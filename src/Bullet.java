@@ -19,8 +19,8 @@ public class Bullet
 		this.angle = angle;
 		//this.vx = Math.sin(angle / 180.0 * 3.14) * 1;
 		//this.vy = Math.cos(angle / 180.0 * 3.14) * 1;
-		this.vx = Math.sin(angle / 180.0 * 3.14) * 0.5;
-		this.vy = Math.cos(angle / 180.0 * 3.14) * 0.5;
+		this.vx = Math.sin(angle / 180.0 * 3.14) * 12;
+		this.vy = Math.cos(angle / 180.0 * 3.14) * 12;
 
 		damage = 12;
 		lifeTimer = 64;
@@ -30,12 +30,12 @@ public class Bullet
 	
 	public void update()
 	{
-		if (vx * vx + vy * vy <= (72))
+		/*if (vx * vx + vy * vy <= (144))
 		{
 			this.vx += Math.sin(angle / 180.0 * 3.14) * 0.6;
 			this.vy += Math.cos(angle / 180.0 * 3.14) * 0.6;
 		}
-
+		*/
 		this.x += this.vx;
 		this.y -= this.vy;
 		

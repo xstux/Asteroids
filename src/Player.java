@@ -46,13 +46,16 @@ public class Player
 		
 		if (fire && reloadTimer == 0)
 		{
-			for (int x = -4; x <= 4; x += 4)
+			/*for (int x = -4; x <= 4; x += 4)
 			{
 				Bullet b = new Bullet(this.x, this.y, this.angle + x);
 				b.vx += this.vx;
 				b.vy += this.vy;
 				bullets.add(b);
-			}
+			}*/
+
+			Bullet b = new Bullet(this.x, this.y, this.angle);
+			bullets.add(b);
 			
 			//fireAngle = Math.atan2(mouseY - (int)this.y, mouseX - (int)this.x) / 3.14 * 180.0;
 			
@@ -62,7 +65,7 @@ public class Player
 			//b.vy += this.vy;
 			//bullets.add(b);
 			
-			reloadTimer = 8;
+			reloadTimer = 6;
 			
 			//fire = false;
 		}
@@ -140,12 +143,12 @@ public class Player
 	public void draw(Graphics2D g)
 	{
 		
-		/*if (thrust)
+		if (thrust)
 		{
 			g.setColor(Color.RED);
 			g.drawLine(-4, 6, 0, 12);
 			g.drawLine(4, 6, 0, 12);	
-		}*/
+		}
 		
 		g.setColor(Color.YELLOW);
 		//g.drawRect(-8, -8, 16, 16);
