@@ -9,6 +9,7 @@ public class Particle {
 	public double angle;
 	public int life;
 	public double rotation;
+	public float red, green, blue;
 	
 
 	public Particle(double x, double y, double angle)
@@ -23,6 +24,10 @@ public class Particle {
 		
 		vx = Math.sin(this.angle / 180.0 * 3.14) * s;
 		vy = Math.cos(this.angle / 180.0 * 3.14) * s;
+
+		red = (float)Math.random() * 1.0f;
+		green = (float)Math.random() * 1.0f;
+		blue = (float)Math.random() * 1.0f;
 		
 	}
 	
@@ -52,7 +57,8 @@ public class Particle {
 	public void Draw(Graphics2D g)
 	{
 		int s = life / 10;
-		Color c = new Color(1.0f, 1.0f, 1.0f, (float)(life / 40.0 * 1.0));
+		Color c = new Color(red, green, blue, (float)(life / 40.0 * 1.0));
+		
 		g.setColor(c);
 		//g.rotate(rotation * 3.14 / 180.0);
 		g.fillOval(-s, -s, s * 2, s * 2);
