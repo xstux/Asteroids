@@ -38,7 +38,6 @@ public class GamePanel extends JPanel implements Runnable
 	private int FPS = 30;
 	private double averageFPS;
 	
-	public Block block = new Block();
 	
 	long startTime;
 	long URDTimeMillis;
@@ -527,8 +526,8 @@ public class GamePanel extends JPanel implements Runnable
 		while (i.hasNext())
 		{
 			GameObject gameObject = i.next();
-			//g.setColor(gameObject.c);
-			g.setColor(Color.WHITE);
+			g.setColor(gameObject.c);
+			//g.setColor(Color.WHITE);
 			g.setTransform(identity);
 			g.translate(gameObject.x, gameObject.y);
 			g.rotate(gameObject.angle * 3.14 / 180.0);
@@ -572,10 +571,7 @@ public class GamePanel extends JPanel implements Runnable
 			g.translate(e.x, e.y);
 			e.draw(g);
 		}
-		
-
-		
-		
+	
 		g.setTransform(identity);
 		g.translate(player.x, player.y);
 		g.rotate(player.angle  * 3.14 / 180.0);
@@ -588,13 +584,10 @@ public class GamePanel extends JPanel implements Runnable
 		g.setFont(myFont);
 		g.fillRect(0, 0, 102, 22);
 		g.setColor(Color.RED);
-		//g.drawString("Frame: " + frameCount, 2, 10);
 		g.drawString("Score: " + player.score, 2, 10);
-		
 		g.drawString("Average FPS: " + df.format(averageFPS), 2, 20);
 		g.drawRect(0, 0, 102, 22);
 		
-		//g.drawRect((int)block.r.getX(), (int)block.r.getY(), (int)block.r.getWidth(), (int)block.r.getHeight());
 	}
 	
 	private void gameDraw()

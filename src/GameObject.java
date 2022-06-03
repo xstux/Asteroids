@@ -27,7 +27,7 @@ public class GameObject
 		speed = 5 - (Math.random() * 10.0);
 		changeDirection();
 		angle = Math.random()*360.0;
-		c = new Color((float)Math.random(), (float)Math.random(), (float)Math.random());
+		c = new Color(Rand1(), Rand1(), Rand1());
 		gType = (int)(Math.random() * 4) + 1;
 		life = l * 2;
 		active = true;
@@ -99,5 +99,11 @@ public class GameObject
 		
 		//Create a new polygon from the generated points and return it.
 		return new Polygon(x, y, pts);
+	}
+
+	public float Rand1()
+	{
+		//Returns random between 0.5f and 1.0f
+		return (float)Math.min(Math.random() + 0.5f, 1.0f);
 	}
 }
